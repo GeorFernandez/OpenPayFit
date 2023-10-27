@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "OpenPayFit"
 include ':app'
+include ':domain'
+include ':di'
+include ':data'
