@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">OpenPayFit</string>
+    <string name="app_name">OpenPay Fit</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_location">Location\n</string>
+    <string name="title_pictures">Pictures\n</string>
 </resources>
