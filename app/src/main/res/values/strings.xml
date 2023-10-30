@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">OpenPay Fit</string>
+
+    // Tabs names
     <string name="title_profile">Profile</string>
     <string name="title_movies">Movies</string>
     <string name="title_location">Location\n</string>
     <string name="title_pictures">Pictures\n</string>
+
+    // Profile
+    <string name="actor_image_content_description">Actor image</string>
+
+    // Empty state
+    <string name="empty_state_image_content_description">Empty state image</string>
+    <string name="empty_state_text">There is nothing to show in here..</string>
+    <string name="exception_dialog_positive_text">OK</string>
+    <string name="movie_starring">Movie starring:</string>
 </resources>
