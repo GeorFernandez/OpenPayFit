@@ -9,10 +9,17 @@
 
     // Profile
     <string name="actor_image_content_description">Actor image</string>
+    <string name="actor_biography_is_empty">There is no information to show</string>
 
     // Empty state
     <string name="empty_state_image_content_description">Empty state image</string>
     <string name="empty_state_text">There is nothing to show in here..</string>
     <string name="exception_dialog_positive_text">OK</string>
     <string name="movie_starring">Movie starring:</string>
+    <string name="most_popular_title">"Most Popular Movies: "</string>
+    <string name="recommended_title">"Recommended Movies: "</string>
+    <string name="top_rated_title">"Top Rated Movies: "</string>
+    <string name="no_popular_movies_to_show">No popular movies to show</string>
+    <string name="no_recommended_movies_to_show">No recommended movies to show</string>
+    <string name="no_top_rated_movies_to_show">No top rated movies to show</string>
 </resources>

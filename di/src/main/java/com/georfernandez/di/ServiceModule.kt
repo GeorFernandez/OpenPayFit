@@ -1,8 +1,8 @@
 package com.georfernandez.di
 
-import com.georfernandez.data.service.ActorServiceImpl
+import com.georfernandez.data.service.TMDBServiceImpl
 import com.georfernandez.data.service.api.TMDBApi
-import com.georfernandez.domain.service.ActorService
+import com.georfernandez.domain.service.TMDBService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object ServiceModule {
     @Provides
-    fun provideActorService(tMDBApi: TMDBApi): ActorService = ActorServiceImpl(tMDBApi)
+    fun provideTMDBService(tMDBApi: TMDBApi): TMDBService = TMDBServiceImpl(tMDBApi)
 }
