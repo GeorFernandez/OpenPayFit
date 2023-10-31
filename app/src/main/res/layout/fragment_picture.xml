@@ -6,17 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".ui.picture.PictureFragment">
 
-    <TextView
-        android:id="@+id/text_picture"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/gallery_button"
+        style="@style/style_common_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginHorizontal="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:text="@string/gallery_button"
+        app:layout_constraintBottom_toTopOf="@id/save_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/picture_fragment_title" />
+
+    <Button
+        android:id="@+id/save_button"
+        style="@style/style_common_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gallery_button"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/picture_fragment_title"
+        style="@style/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin10"
+        android:gravity="center"
+        android:text="@string/counter_text"
+        app:layout_constraintBottom_toTopOf="@id/gallery_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
