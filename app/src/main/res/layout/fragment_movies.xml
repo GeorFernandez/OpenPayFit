@@ -2,21 +2,107 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_content_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin5"
     tools:context=".ui.movies.MoviesFragment">
 
-    <TextView
-        android:id="@+id/text_movies"
+    <LinearLayout
+        android:id="@+id/movies_empty_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/empty_state_image_height"
+            android:contentDescription="@string/empty_state_image_content_description"
+            android:scaleType="centerInside"
+            android:scrollbars="horizontal"
+            android:src="@drawable/empty_state_image" />
+
+        <TextView
+            android:id="@+id/empty_state_text"
+            style="@style/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/empty_state_text" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mostPopularTitle"
+        style="@style/subtitle"
+        android:layout_margin="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/most_popular_title"
+        app:layout_constraintBottom_toTopOf="@id/mostPopularRecyclerView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topRatedTitle"
+        style="@style/subtitle"
+        android:layout_margin="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/top_rated_title"
+        app:layout_constraintBottom_toTopOf="@id/topRatedRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/mostPopularRecyclerView" />
+
+    <TextView
+        android:id="@+id/recommendedTitle"
+        style="@style/subtitle"
+        android:layout_margin="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/recommended_title"
+        app:layout_constraintBottom_toTopOf="@id/recommendedRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/topRatedRecyclerView" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mostPopularRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin5"
+        app:layout_constraintBottom_toTopOf="@id/topRatedTitle"
+        app:layout_constraintTop_toBottomOf="@id/mostPopularTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topRatedRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin5"
+        app:layout_constraintBottom_toTopOf="@id/recommendedTitle"
+        app:layout_constraintTop_toBottomOf="@id/topRatedTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommendedRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recommendedTitle" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loader_animation"
+        android:layout_width="@dimen/generic_loader_size"
+        android:layout_height="@dimen/generic_loader_size"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loader" />
 </androidx.constraintlayout.widget.ConstraintLayout>

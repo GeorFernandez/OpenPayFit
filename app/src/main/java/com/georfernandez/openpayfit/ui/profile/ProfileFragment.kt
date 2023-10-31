@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.georfernandez.domain.entity.Actor
+import com.georfernandez.openpayfit.R
 import com.georfernandez.openpayfit.databinding.FragmentProfileBinding
 import com.georfernandez.openpayfit.util.ExceptionDialogFragment
 import com.georfernandez.openpayfit.util.ExceptionDialogFragment.Companion.EXCEPTION_DIALOG_FRAGMENT
@@ -18,14 +19,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private lateinit var _binding: FragmentProfileBinding
     private val binding get() = _binding
+    private val profileViewModel: ProfileViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val profileViewModel =
-            ViewModelProvider(this)[ProfileViewModel::class.java]
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         profileViewModel.getState().observe(viewLifecycleOwner, ::updateUi)
         profileViewModel.fetchProfileInfo()
@@ -64,7 +63,12 @@ class ProfileFragment : Fragment() {
             binding.loaderAnimation.visibility = View.GONE
             binding.actorImage.showImage(actor.profilePath)
             binding.actorName.text = actor.name
-            binding.actorBiography.text = actor.biography
+            if (actor.biography.isEmpty()) {
+                R.string.actor_biography_is_empty
+            } else {
+                binding.actorBiography.text = actor.biography
+            }
+
             binding.recycler.apply {
                 adapter = ProfileAdapter(actor.movieStarring)
                 layoutManager = LinearLayoutManager(context)

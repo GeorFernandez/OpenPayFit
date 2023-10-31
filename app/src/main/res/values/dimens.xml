@@ -17,6 +17,8 @@
     <dimen name="card_image_height">150dp</dimen>
     <dimen name="card_star_image_width">30dp</dimen>
     <dimen name="card_star_image_height">30dp</dimen>
+    <dimen name="card_height">200dp</dimen>
+
 
 
     // Exception dialog
