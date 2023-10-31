@@ -8,7 +8,6 @@ import com.georfernandez.data.service.response.ActorResponse
 import com.georfernandez.data.service.response.MovieStarringResponse
 import com.georfernandez.domain.entity.Actor
 import com.georfernandez.domain.entity.MovieStarring
-import com.georfernandez.domain.utils.NO_BIOGRAPHY
 
 fun ActorPagingResponse.mapToLocalActorList(): List<Actor> = results.map { it.mapToLocalActor() }
 private fun ActorResponse.mapToLocalActor() =
@@ -19,9 +18,7 @@ private fun ActorResponse.mapToLocalActor() =
         name = name,
         popularity = popularity,
         profilePath = profilePath,
-        biography = biography.ifEmpty {
-            NO_BIOGRAPHY
-        },
+        biography = biography,
     )
 
 private fun MovieStarringResponse.mapToLocalMovieStarring() =
