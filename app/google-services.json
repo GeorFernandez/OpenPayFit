@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "475844129211",
+    "project_id": "openpayfit-3bb62",
+    "storage_bucket": "openpayfit-3bb62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475844129211:android:cfbf9147dfa7c278d4949e",
+        "android_client_info": {
+          "package_name": "com.georfernandez.openpayfit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiwft5808NhHMFTlTLcVhrIgDUoJODe_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

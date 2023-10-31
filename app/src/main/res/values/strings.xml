@@ -22,4 +22,10 @@
     <string name="no_popular_movies_to_show">No popular movies to show</string>
     <string name="no_recommended_movies_to_show">No recommended movies to show</string>
     <string name="no_top_rated_movies_to_show">No top rated movies to show</string>
+    <string name="gallery_button">Gallery</string>
+    <string name="save_button">Save</string>
+    <string name="clear_button">Clear</string>
+    <string name="gallery_selection_title">Select image</string>
+    <string name="successfully_saved_toast">Successfully saved!</string>
+    <string name="counter_text">Select images</string>
 </resources>

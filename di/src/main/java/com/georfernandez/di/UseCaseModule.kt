@@ -1,6 +1,7 @@
 package com.georfernandez.di
 
 import com.georfernandez.domain.database.TMDBRepository
+import com.georfernandez.domain.service.FirebaseService
 import com.georfernandez.domain.service.TMDBService
 import com.georfernandez.domain.usecases.GetMostPopularActorUseCase
 import com.georfernandez.domain.usecases.GetMostPopularActorUseCaseImpl
@@ -10,6 +11,8 @@ import com.georfernandez.domain.usecases.GetRecommendedMoviesByIdUseCase
 import com.georfernandez.domain.usecases.GetRecommendedMoviesByIdUseCaseImpl
 import com.georfernandez.domain.usecases.GetTopRatedMoviesUseCase
 import com.georfernandez.domain.usecases.GetTopRatedMoviesUseCaseImpl
+import com.georfernandez.domain.usecases.SavePicturesUseCase
+import com.georfernandez.domain.usecases.SavePicturesUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,4 +48,7 @@ object UseCaseModule {
         tMDBRepository: TMDBRepository,
     ): GetRecommendedMoviesByIdUseCase =
         GetRecommendedMoviesByIdUseCaseImpl(tMDBService, tMDBRepository)
+
+    @Provides
+    fun provideSaveImagesUseCase(firebaseService: FirebaseService): SavePicturesUseCase = SavePicturesUseCaseImpl(firebaseService)
 }
